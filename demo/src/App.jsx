@@ -10,7 +10,7 @@ function App() {
                 opacity: 1,
             }}
         >
-            <NavBar />
+            <NavBar title='ANKIT' />
         </div>
     );
 }
