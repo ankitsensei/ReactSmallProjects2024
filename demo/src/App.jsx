@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import Demo from './Demo';
 
 function App() {
     return (
@@ -10,7 +11,8 @@ function App() {
                 opacity: 1,
             }}
         >
-            <NavBar title='ANKIT' />
+            {/* <NavBar title='ANKIT' /> */}
+            <Demo />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBtn from './NavBtn';
+import Btn from './Btn';
 
 function NavBar(props) {
     return (
@@ -7,10 +7,10 @@ function NavBar(props) {
             <nav className='flex justify-between items-center mx-10 py-5'>
                 <h1 className='text-xl'>{props.title}</h1>
                 <ul className='flex gap-5'>
-                    <NavBtn title='HOME' />
-                    <NavBtn title='ABOUT' />
-                    <NavBtn title='PROJECTS' />
-                    <NavBtn title='CONTACTS' />
+                    <Btn title='HOME' />
+                    <Btn title='ABOUT' />
+                    <Btn title='PROJECTS' />
+                    <Btn title='CONTACTS' />
                 </ul>
             </nav>
         </div>
