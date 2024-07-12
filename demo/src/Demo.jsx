@@ -1,29 +1,19 @@
 import React, { useState } from 'react';
 import Btn from './Btn';
+import Table from './Table';
 
 function Demo() {
-    const [count, setCount] = useState(0);
-
-    function Decrement() {
-        setCount(count - 1);
-    }
-    function Reset() {
-        setCount(0);
-    }
-    function Increment() {
-        setCount(count + 1);
-    }
-
     return (
-        <div className='flex flex-col justify-center items-center'>
-            <h1 className='m-5 w-40 h-20 text-3xl bg-slate-500 flex justify-center items-center rounded-md '>
-                {count}
-            </h1>
-            <div className='flex gap-2'>
-                <Btn title='-1' onClick={Decrement} />
-                <Btn title='reset' onClick={Reset} />
-                <Btn title='+1' onClick={Increment} />
-            </div>
+        <div className='flex flex-col items-center '>
+            <Table
+                className='text-red-600'
+                start='START'
+                end='END'
+                task='TASK'
+            />
+            <Table start='06:00' end='07:00' task='Yoga/Exercise' />
+            <Table start='07:00' end='08:00' task='Bath and Breakfast' />
+            <Table start='09:00' end='10:00' task='Watch Anime' />
         </div>
     );
 }
