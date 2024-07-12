@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function table(props) {
+function table() {
+    const [start, setStart] = useState('06:00');
+    const [end, setEnd] = useState('07:00');
+    const [task, setTask] = useState(['wake up']);
     return (
         <div>
-            <tr className='flex gap-10'>
-                <td className='w-30'>{props.start}</td>
-                <td className='w-30'>{props.end}</td>
-                <td className='w-80'>{props.task}</td>
-            </tr>
+            <tbody>
+                <td>
+                    {start.map((element, index) => {
+                        return element.index;
+                    })}
+                </td>
+            </tbody>
         </div>
     );
 }
