@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Navbar from './components/navbar.jsx';
-import Form from './components/form.jsx';
 
 function App() {
     return (
@@ -9,16 +8,22 @@ function App() {
             <div className='page1'>
                 <Navbar />
                 <div className='text-9xl tracking-tighter font-semibold mt-32 ml-16'>
+                    <h1>WE CREATE</h1>
                     <div className='flex items-center'>
                         <div className='w-40 h-24 bg-rose-600 rounded-lg'></div>
-                        <h1>LET'S START</h1>
+                        <h1>EYE OPENING</h1>
                     </div>
-                    <h1>A PROJECT TOGETHER</h1>
+                    <h1>PRESENTATIONS</h1>
                 </div>
-            </div>
-            <div className='form ml-16'>
-                <p className='mt-40 mb-20'>Fill the form below: </p>
-                <Form />
+                <div>
+                    <div className='flex justify-between mx-20'>
+                        <p>For public and private companies</p>
+                        <p>For the first pitch to IPO</p>
+                        <button className='w-52 h-10 border-rose-600 bg-green-600 rounded-full'>
+                            <div className=''>START THE PROJECT</div>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
