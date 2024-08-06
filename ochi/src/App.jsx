@@ -2,13 +2,14 @@ import React from 'react';
 
 import Navbar from './components/navbar.jsx';
 import { FaArrowUpLong } from 'react-icons/fa6';
+import Marquee from './components/marquee.jsx';
 
 function App() {
     return (
         <div className='bg-zinc-900 text-white w-full h-screen'>
             <div className='page1'>
                 <Navbar />
-                <div className='text-9xl tracking-tighter font-semibold mt-32 ml-16'>
+                <div className='text-9xl tracking-tighter font-semibold mt-32 ml-16 leading-none'>
                     <h1>WE CREATE</h1>
                     <div className='flex items-center'>
                         <div className='w-40 h-24 bg-rose-600 rounded-lg'></div>
@@ -32,6 +33,7 @@ function App() {
                     </div>
                 </div>
             </div>
+            <Marquee/>
         </div>
     );
 }
