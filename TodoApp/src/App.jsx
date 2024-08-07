@@ -7,6 +7,7 @@ function App() {
         'english assign',
         'chemistry assign',
     ]);
+    const [done, setDone] = useState(['marketing', 'cleaning room']);
 
     return (
         <div className='flex flex-col items-center pt-20 w-full h-screen text-2xl bg-zinc-900 text-white'>
@@ -33,7 +34,7 @@ function App() {
                     Add
                 </button>
             </div>
-            <div>
+            <div className='flex justify-between gap-40'>
                 <ul className='flex flex-col gap-2'>
                     {items.map((item) => (
                         <div className='flex gap-2'>
@@ -46,6 +47,30 @@ function App() {
                                     setItems(items.filter((i) => i !== item))
                                 }
                             >
+                                Del
+                            </button>
+                            <button
+                                className='ml-2 px-4 py-2 rounded border-2 border-green-600 text-green-600'
+                                onClick={() => {
+                                    setDone([...done, item]);
+                                    setItems(items.filter((i) => i !== item));
+                                }}
+                            >
+                                Done
+                            </button>
+                        </div>
+                    ))}
+                </ul>
+                <ul className='flex flex-col gap-2'>
+                    <h1 className='text-center mt-10 mb-2 text-4xl'>
+                        Done Tasks
+                    </h1>
+                    {done.map((item) => (
+                        <div className='flex gap-2'>
+                            <li className='w-80 px-4 py-2 rounded bg-zinc-900 border-2 border-zinc-100'>
+                                {item}
+                            </li>
+                            <button className='ml-2 px-4 py-2 rounded border-2 border-red-600 text-red-600'>
                                 Del
                             </button>
                         </div>
