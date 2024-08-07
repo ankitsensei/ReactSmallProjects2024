@@ -36,6 +36,9 @@ function App() {
             </div>
             <div className='flex justify-between gap-40'>
                 <ul className='flex flex-col gap-2'>
+                    <h1 className='text-center mt-10 mb-2 text-4xl'>
+                        Pending Task
+                    </h1>
                     {items.map((item) => (
                         <div className='flex gap-2'>
                             <li className='w-80 px-4 py-2 rounded bg-zinc-900 border-2 border-zinc-100'>
@@ -65,12 +68,17 @@ function App() {
                     <h1 className='text-center mt-10 mb-2 text-4xl'>
                         Done Tasks
                     </h1>
-                    {done.map((item) => (
+                    {done.map((doneItem) => (
                         <div className='flex gap-2'>
                             <li className='w-80 px-4 py-2 rounded bg-zinc-900 border-2 border-zinc-100'>
-                                {item}
+                                {doneItem}
                             </li>
-                            <button className='ml-2 px-4 py-2 rounded border-2 border-red-600 text-red-600'>
+                            <button
+                                className='ml-2 px-4 py-2 rounded border-2 border-red-600 text-red-600'
+                                onClick={() => {
+                                    setDone(done.filter((i) => i !== doneItem));
+                                }}
+                            >
                                 Del
                             </button>
                         </div>
