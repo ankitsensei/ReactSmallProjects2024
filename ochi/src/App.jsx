@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Navbar from './components/navbar.jsx';
-import { FaArrowUpLong } from 'react-icons/fa6';
+// import { FaArrowUpLong } from 'react-icons/fa6';
 import Marquee from './components/marquee.jsx';
 
 function App() {
@@ -27,13 +27,13 @@ function App() {
                                 START THE PROJECT
                             </div>
                             <div className='rotate-[45deg] w-10 h-10 border-2 border-zinc-600 flex justify-center items-center rounded-full'>
-                                <FaArrowUpLong />
+                                {/* <FaArrowUpLong /> */}
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
-            <Marquee/>
+            <Marquee />
         </div>
     );
 }
