@@ -81,6 +81,14 @@ function App() {
                             >
                                 Del
                             </button>
+                            <button
+                                className='ml-2 px-4 py-2 rounded border-2 border-sky-600 text-sky-600'
+                                onClick={() => {
+                                    setItems([...items, doneItem]);
+                                }}
+                            >
+                                UnDone
+                            </button>
                         </div>
                     ))}
                 </ul>
