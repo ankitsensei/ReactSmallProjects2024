@@ -34,11 +34,9 @@ function App() {
                     Add
                 </button>
             </div>
-            <div className='flex justify-between gap-40'>
-                <ul className='flex flex-col gap-2'>
-                    <h1 className='text-center mt-10 mb-2 text-4xl'>
-                        Pending Task
-                    </h1>
+            <div className='flex justify-between gap-2'>
+                <ul className='flex flex-col gap-2 border-[1px] border-zinc-600 p-10 rounded w-[600px]'>
+                    <h1 className='text-center mb-2 text-4xl'>Pending Task</h1>
                     {items.map((item) => (
                         <div className='flex gap-2'>
                             <li className='w-80 px-4 py-2 rounded bg-zinc-900 border-2 border-zinc-100'>
@@ -64,10 +62,8 @@ function App() {
                         </div>
                     ))}
                 </ul>
-                <ul className='flex flex-col gap-2'>
-                    <h1 className='text-center mt-10 mb-2 text-4xl'>
-                        Done Tasks
-                    </h1>
+                <ul className='flex flex-col gap-2 border-[1px] border-zinc-600 p-10 rounded w-[600px]'>
+                    <h1 className='text-center mb-2 text-4xl'>Done Tasks</h1>
                     {done.map((doneItem) => (
                         <div className='flex gap-2'>
                             <li className='w-80 px-4 py-2 rounded bg-zinc-900 border-2 border-zinc-100'>
@@ -85,6 +81,7 @@ function App() {
                                 className='ml-2 px-4 py-2 rounded border-2 border-sky-600 text-sky-600'
                                 onClick={() => {
                                     setItems([...items, doneItem]);
+                                    setDone(done.filter((i) => i !== doneItem));
                                 }}
                             >
                                 UnDone
