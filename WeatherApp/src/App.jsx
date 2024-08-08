@@ -1,5 +1,7 @@
 import React from 'react';
 import { IoSearchCircle } from 'react-icons/io5';
+import { FaWater } from 'react-icons/fa';
+import { FaWind } from 'react-icons/fa6';
 
 function App() {
     return (
@@ -13,8 +15,28 @@ function App() {
                             className='w-64 h-10 rounded-md bg-zinc-800 bg-opacity-70 border-2 border-zinc-50 px-2 font-semibold outline-none'
                         />
                         <button>
-                            <IoSearchCircle className='w-14 h-14 ' />
+                            <IoSearchCircle className='w-14 h-14' />
                         </button>
+                    </div>
+                    <div className='text-center mt-40'>
+                        <h1 className='text-9xl'>40°</h1>
+                        <h2 className='text-3xl'>London</h2>
+                    </div>
+                    <div className='flex justify-between mt-12 text-white font-semibold bg-zinc-800 bg-opacity-50 border-2 border-zinc-100 p-5 rounded-lg'>
+                        <div className='flex flex-col'>
+                            <FaWater />
+                            <div>
+                                <p>91 %</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        <div>
+                            <FaWind />
+                            <div>
+                                <p>3.6 km/h</p>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
