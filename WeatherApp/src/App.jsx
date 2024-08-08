@@ -20,7 +20,7 @@ function App() {
                     </div>
                     <div className='text-center mt-40'>
                         <h1 className='text-9xl'>40°</h1>
-                        <h2 className='text-3xl'>London</h2>
+                        <h2 className='text-3xl font-semibold'>London</h2>
                     </div>
                     <div className='flex justify-between mt-12 text-white font-semibold bg-zinc-800 bg-opacity-50 border-2 border-zinc-100 p-5 rounded-lg'>
                         <div className='flex flex-col'>
