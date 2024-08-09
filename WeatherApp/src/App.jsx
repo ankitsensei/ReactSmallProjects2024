@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IoSearchCircle } from 'react-icons/io5';
 import { FaWater } from 'react-icons/fa';
 import { FaWind } from 'react-icons/fa6';
@@ -13,6 +13,9 @@ function App() {
                 console.log(data);
             } catch (error) {}
         };
+        useEffect(() => {
+            search('London');
+        }, []);
     };
     return (
         <div className='bg-zinc-900 text-white w-full h-screen'>
