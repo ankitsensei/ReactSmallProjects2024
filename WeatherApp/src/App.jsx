@@ -17,6 +17,7 @@ function App() {
     useEffect(() => {
         search('London');
     }, []);
+    console.log(import.meta.env.VITE_API_KEY);
 
     return (
         <div className='bg-zinc-900 text-white w-full h-screen'>
