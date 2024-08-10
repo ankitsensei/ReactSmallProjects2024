@@ -4,19 +4,20 @@ import { FaWater } from 'react-icons/fa';
 import { FaWind } from 'react-icons/fa6';
 
 function App() {
-    const Weather = () => {
-        const search = async (city) => {
-            try {
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={import.meta.env.VITE_API_KEY}`;
-                const response = await fetch(url);
-                const data = await response.json();
-                console.log(data);
-            } catch (error) {}
-        };
-        useEffect(() => {
-            search('London');
-        }, []);
+    const search = async (city) => {
+        try {
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
+                import.meta.env.VITE_API_KEY
+            }`;
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {}
     };
+    useEffect(() => {
+        search('London');
+    }, []);
+
     return (
         <div className='bg-zinc-900 text-white w-full h-screen'>
             <div className='flex flex-col items-center pt-20 h-full'>
