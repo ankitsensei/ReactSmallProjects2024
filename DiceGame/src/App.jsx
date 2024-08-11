@@ -1,7 +1,12 @@
 import React from 'react';
+import Dice from './components/Dice.jsx';
 
 function App() {
-    return <div>App</div>;
+    return (
+        <div>
+            <Dice />
+        </div>
+    );
 }
 
 export default App;
