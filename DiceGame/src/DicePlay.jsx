@@ -8,13 +8,11 @@ function DicePlay() {
     return (
         <div>
             <div className='flex justify-between items-center px-10 py-5'>
-                <div className='flex items-center justify-center'>
-                    <Link to='/'>
-                        <button className='bg-zinc-900 text-white w-16 h-12 rounded-md flex justify-center items-center'>
-                            <IoMdArrowRoundBack />
-                        </button>
-                    </Link>
-                </div>
+                <Link to='/'>
+                    <button className='bg-zinc-900 text-white w-16 h-12 rounded-md flex justify-center items-center'>
+                        <IoMdArrowRoundBack />
+                    </button>
+                </Link>
                 <ul className='flex gap-2'>
                     <li>
                         <Btn2 text='1' />
