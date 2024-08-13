@@ -10,12 +10,10 @@ function DicePlay() {
             <div className='flex justify-between items-center px-10 py-5'>
                 <div className='flex items-center justify-center'>
                     <Link to='/'>
-                        <button className='bg-zinc-900 text-white px-4 py-[10px] rounded-md'>
+                        <button className='bg-zinc-900 text-white w-16 h-12 rounded-md flex justify-center items-center'>
                             <IoMdArrowRoundBack />
                         </button>
                     </Link>
-
-                    <h1 className='text-5xl font-bold'>DICE GAME</h1>
                 </div>
                 <ul className='flex gap-2'>
                     <li>

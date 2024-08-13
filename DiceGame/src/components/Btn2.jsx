@@ -9,7 +9,7 @@ function Btn({ text, className = className }) {
 }
 
 Btn.defaultProps = {
-    className: 'bg-zinc-900 text-white px-4 py-2 rounded-md w-16 h-15 text-lg',
+    className: 'bg-zinc-900 text-white px-4 py-2 rounded-md w-16 h-12 text-lg',
 };
 
 export default Btn;
