@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Dice from './Dice';
 import Btn2 from './components/Btn2';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
 function DicePlay() {
+    const [number, setNumber] = useState(0);
+    const [randomNumber, setRandomNumber] = useState('GENERATE');
+    const [value, setValue] = useState('STATUS');
+
+    const generateRandomNumber = () => {
+        setRandomNumber(Math.floor(Math.random() * 6) + 1);
+        if (randomNumber === number) {
+            setValue('YOU WIN');
+        } else {
+            setValue('YOU LOSE');
+        }
+    };
     return (
         <div>
             <div className='flex justify-between items-center px-10 py-5'>
@@ -14,25 +26,44 @@ function DicePlay() {
                     </button>
                 </Link>
                 <ul className='flex gap-2'>
-                    <li>
+                    <li onClick={() => setNumber(1)}>
                         <Btn2 text='1' />
                     </li>
-                    <li>
+                    <li onClick={() => setNumber(2)}>
                         <Btn2 text='2' />
                     </li>
-                    <li>
+                    <li onClick={() => setNumber(3)}>
                         <Btn2 text='3' />
                     </li>
-                    <li>
+                    <li onClick={() => setNumber(4)}>
                         <Btn2 text='4' />
                     </li>
-                    <li>
+                    <li onClick={() => setNumber(5)}>
                         <Btn2 text='5' />
                     </li>
-                    <li>
+                    <li onClick={() => setNumber(6)}>
                         <Btn2 text='6' />
                     </li>
                 </ul>
+            </div>
+            <div className='flex flex-col gap-5 justify-center items-center w-full h-screen'>
+                <h1 className='text-5xl font-bold'>
+                    Your current number is{' '}
+                    <span className='text-rose-500'>{number}</span>
+                </h1>
+                <div className='flex justify-center items-center text-3xl px-24'>
+                    <div className='flex text-5xl font-semibold justify-center items-center gap-4'>
+                        <div
+                            className='text-4xl bg-zinc-900 text-white w-80 h-80 flex justify-center items-center rounded-xl select-none shadow-2xl active:bg-zinc-800'
+                            onClick={() => generateRandomNumber(number)}
+                        >
+                            {randomNumber}
+                        </div>
+                        <div className='w-80 h-80 flex justify-center items-center rounded-lg border-2 border-zinc-900 shadow-2xl'>
+                            <p>{value}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
