@@ -1,10 +1,22 @@
 import React from 'react';
-import Dice from './components/Dice.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Dice from './Dice.jsx';
+import DicePlay from './DicePlay.jsx';
 
 function App() {
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <Dice />,
+        },
+        {
+            path: '/DicePlay',
+            element: <DicePlay />,
+        },
+    ]);
     return (
         <div>
-            <Dice />
+            <RouterProvider router={router} />
         </div>
     );
 }

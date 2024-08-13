@@ -1,6 +1,6 @@
 import React from 'react';
-import Btn from './Btn';
 import { Link } from 'react-router-dom';
+import Btn from './components/Btn';
 
 function Dice() {
     return (
@@ -12,7 +12,7 @@ function Dice() {
             />
             <div className='flex flex-col items-end gap-5'>
                 <h1 className='text-9xl font-bold'>DICE GAME</h1>
-                <Link to='./DicePlay'>
+                <Link to='DicePlay'>
                     <Btn text='Play Now' />
                 </Link>
             </div>
