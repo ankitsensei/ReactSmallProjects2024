@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Dice from './Dice';
 import Btn2 from './components/Btn2';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
 function DicePlay() {
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState('not selected yet');
     const [randomNumber, setRandomNumber] = useState('GENERATE');
     const [value, setValue] = useState('STATUS');
 
-    const generateRandomNumber = () => {
-        setRandomNumber(Math.floor(Math.random() * 6) + 1);
-        if (randomNumber === number) {
-            setValue('YOU WIN');
+    const generateRandomNumber = (number) => {
+        if (number !== 'not selected yet') {
+            setRandomNumber(Math.floor(Math.random() * 6) + 1);
+            if (randomNumber === number) {
+                setValue('YOU WIN');
+            } else {
+                setValue('YOU LOSE');
+            }
         } else {
-            setValue('YOU LOSE');
+            alert('Please select any number given in the up-right corner.');
         }
     };
     return (
