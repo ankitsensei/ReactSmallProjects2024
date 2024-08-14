@@ -57,13 +57,14 @@ function DicePlay() {
                 <div className='flex justify-center items-center text-3xl px-24'>
                     <div className='flex text-5xl font-semibold justify-center items-center gap-4'>
                         <div
-                            className='text-4xl bg-zinc-900 text-white w-80 h-80 flex justify-center items-center rounded-xl select-none shadow-2xl active:bg-zinc-800'
+                            className='text-4xl bg-zinc-900 text-white w-80 h-80 flex flex-col text-center justify-center items-center rounded-xl select-none shadow-2xl active:bg-zinc-800'
                             onClick={() => generateRandomNumber(number)}
                         >
-                            {randomNumber}
+                            <p className='text-2xl'>Generated number is</p>
+                            <p>{randomNumber}</p>
                         </div>
-                        <div className='w-80 h-80 flex justify-center items-center rounded-lg border-2 border-zinc-900 shadow-2xl'>
-                            <p>{value}</p>
+                        <div className='text-4xl bg-zinc-900 text-white w-80 h-80 flex justify-center items-center rounded-xl select-none shadow-2xl'>
+                            <h1>{value}</h1>
                         </div>
                     </div>
                 </div>
