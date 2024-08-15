@@ -7,6 +7,7 @@ function DicePlay() {
     const [number, setNumber] = useState('not selected yet');
     const [randomNumber, setRandomNumber] = useState('GENERATE');
     const [value, setValue] = useState('STATUS');
+    let [help, setHelp] = useState(false);
 
     const generateRandomNumber = (number) => {
         if (number !== 'not selected yet') {
@@ -51,7 +52,7 @@ function DicePlay() {
             </div>
             <div className='flex flex-col gap-5 justify-center items-center w-full h-screen'>
                 <h1 className='text-5xl font-bold'>
-                    Your current number is{' '}
+                    Your selected number is{' '}
                     <span className='text-rose-500'>{number}</span>
                 </h1>
                 <div className='flex justify-center items-center text-3xl px-24'>
@@ -67,6 +68,28 @@ function DicePlay() {
                             <h1>{value}</h1>
                         </div>
                     </div>
+                </div>
+                <button
+                    className='w-20 h-10 bg-zinc-900 text-white rounded-md shadow-lg active:bg-zinc-700'
+                    onClick={() => setHelp(!help)}
+                >
+                    HELP
+                </button>
+                <div>
+                    {help && (
+                        <div className='flex flex-col p-10 w-[500px] h-[200px] gap-2 bg-zinc-900 text-white rounded-lg'>
+                            <p>
+                                1. You have to select any number given in the
+                                up-right corner
+                            </p>
+                            <p>2. Then click to the GENERATE BUTTON</p>
+                            <p>
+                                3. If your GENERATED NUMBER is equal to your
+                                SELECTED NUMBER then you will WIN 🎉 else you
+                                will lose 😢
+                            </p>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
