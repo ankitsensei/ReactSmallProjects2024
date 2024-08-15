@@ -12,12 +12,15 @@ function DicePlay() {
 
     const generateRandomNumber = (number) => {
         if (number !== 'not selected yet') {
-            setRandomNumber(Math.floor(Math.random() * 6) + 1);
+            // setRandomNumber(Math.floor(Math.random() * 6) + 1);
+            setRandomNumber(1);
             if (randomNumber === number) {
                 setValue('YOU WIN');
                 setBtnStatus(false);
             } else {
                 setValue('YOU LOSE');
+                console.log('Random number => ' + randomNumber);
+                console.log('Selected number => ' + number);
                 setBtnStatus(false);
             }
         } else {
@@ -71,7 +74,9 @@ function DicePlay() {
                         <div
                             className='text-4xl bg-zinc-900 text-white w-80 h-80 flex flex-col text-center justify-center items-center rounded-xl select-none shadow-2xl active:bg-zinc-800'
                             onClick={
-                                btnStatus ? generateRandomNumber : undefined
+                                btnStatus
+                                    ? () => generateRandomNumber(number)
+                                    : undefined
                             }
                         >
                             <p className='text-2xl'>Generated number is</p>
