@@ -7,19 +7,28 @@ function DicePlay() {
     const [number, setNumber] = useState('not selected yet');
     const [randomNumber, setRandomNumber] = useState('GENERATE');
     const [value, setValue] = useState('STATUS');
-    let [help, setHelp] = useState(false);
+    const [help, setHelp] = useState(false);
+    const [btnStatus, setBtnStatus] = useState(true);
 
     const generateRandomNumber = (number) => {
         if (number !== 'not selected yet') {
             setRandomNumber(Math.floor(Math.random() * 6) + 1);
             if (randomNumber === number) {
                 setValue('YOU WIN');
+                setBtnStatus(false);
             } else {
                 setValue('YOU LOSE');
+                setBtnStatus(false);
             }
         } else {
             alert('Please select any number given in the up-right corner.');
         }
+    };
+    const restartGame = () => {
+        setBtnStatus(true);
+        setNumber('not selected yet');
+        setRandomNumber('GENERATE');
+        setValue('STATUS');
     };
     return (
         <div>
@@ -29,26 +38,28 @@ function DicePlay() {
                         <IoMdArrowRoundBack />
                     </button>
                 </Link>
-                <ul className='flex gap-2'>
-                    <li onClick={() => setNumber(1)}>
-                        <Btn2 text='1' />
-                    </li>
-                    <li onClick={() => setNumber(2)}>
-                        <Btn2 text='2' />
-                    </li>
-                    <li onClick={() => setNumber(3)}>
-                        <Btn2 text='3' />
-                    </li>
-                    <li onClick={() => setNumber(4)}>
-                        <Btn2 text='4' />
-                    </li>
-                    <li onClick={() => setNumber(5)}>
-                        <Btn2 text='5' />
-                    </li>
-                    <li onClick={() => setNumber(6)}>
-                        <Btn2 text='6' />
-                    </li>
-                </ul>
+                {btnStatus && (
+                    <ul className='flex gap-2'>
+                        <li onClick={() => setNumber(1)}>
+                            <Btn2 text='1' />
+                        </li>
+                        <li onClick={() => setNumber(2)}>
+                            <Btn2 text='2' />
+                        </li>
+                        <li onClick={() => setNumber(3)}>
+                            <Btn2 text='3' />
+                        </li>
+                        <li onClick={() => setNumber(4)}>
+                            <Btn2 text='4' />
+                        </li>
+                        <li onClick={() => setNumber(5)}>
+                            <Btn2 text='5' />
+                        </li>
+                        <li onClick={() => setNumber(6)}>
+                            <Btn2 text='6' />
+                        </li>
+                    </ul>
+                )}
             </div>
             <div className='flex flex-col gap-5 justify-center items-center w-full h-screen'>
                 <h1 className='text-5xl font-bold'>
@@ -59,7 +70,9 @@ function DicePlay() {
                     <div className='flex text-5xl font-semibold justify-center items-center gap-4'>
                         <div
                             className='text-4xl bg-zinc-900 text-white w-80 h-80 flex flex-col text-center justify-center items-center rounded-xl select-none shadow-2xl active:bg-zinc-800'
-                            onClick={() => generateRandomNumber(number)}
+                            onClick={
+                                btnStatus ? generateRandomNumber : undefined
+                            }
                         >
                             <p className='text-2xl'>Generated number is</p>
                             <p>{randomNumber}</p>
@@ -69,12 +82,20 @@ function DicePlay() {
                         </div>
                     </div>
                 </div>
-                <button
-                    className='w-20 h-10 bg-zinc-900 text-white rounded-md shadow-lg active:bg-zinc-700'
-                    onClick={() => setHelp(!help)}
-                >
-                    HELP
-                </button>
+                <div className='flex gap-2'>
+                    <button
+                        className='w-20 h-10 bg-zinc-900 text-white rounded-md shadow-lg active:bg-zinc-700'
+                        onClick={() => restartGame()}
+                    >
+                        RESTART
+                    </button>
+                    <button
+                        className='w-20 h-10 bg-zinc-900 text-white rounded-md shadow-lg active:bg-zinc-700'
+                        onClick={() => setHelp(!help)}
+                    >
+                        HELP
+                    </button>
+                </div>
                 <div>
                     {help && (
                         <div className='flex flex-col p-10 w-[500px] h-[200px] gap-2 bg-zinc-900 text-white rounded-lg'>
