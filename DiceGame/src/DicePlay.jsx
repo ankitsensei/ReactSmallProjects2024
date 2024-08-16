@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Btn2 from './components/Btn2';
 import { IoMdArrowRoundBack } from 'react-icons/io';
@@ -10,19 +10,23 @@ function DicePlay() {
     const [help, setHelp] = useState(false);
     const [btnStatus, setBtnStatus] = useState(true);
 
-    const generateRandomNumber = (number) => {
-        if (number !== 'not selected yet') {
-            // setRandomNumber(Math.floor(Math.random() * 6) + 1);
-            setRandomNumber(1);
+    useEffect(() => {
+        if (randomNumber !== 'GENERATE' && number !== 'not selected yet') {
             if (randomNumber === number) {
                 setValue('YOU WIN');
-                setBtnStatus(false);
             } else {
                 setValue('YOU LOSE');
                 console.log('Random number => ' + randomNumber);
                 console.log('Selected number => ' + number);
-                setBtnStatus(false);
             }
+            setBtnStatus(false);
+        }
+    }, [randomNumber]);
+
+    const generateRandomNumber = (number) => {
+        if (number !== 'not selected yet') {
+            const newRandomNumber = Math.floor(Math.random() * 6) + 1;
+            setRandomNumber(newRandomNumber);
         } else {
             alert('Please select any number given in the up-right corner.');
         }
