@@ -30,7 +30,7 @@ DicePlay is a simple and fun web-based game built with React. The game allows us
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/diceplay-game.git
+    git clone https://github.com/ankitsensei/ReactSmallProjects2024.git
     ```
 
 2. Navigate to the project directory:
