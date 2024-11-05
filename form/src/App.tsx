@@ -1,7 +1,11 @@
-
+import Menu from './components/Menu'
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <div className='flex justify-between'>
+        <Menu />
+      </div>
+    </div>
   )
 }
 
