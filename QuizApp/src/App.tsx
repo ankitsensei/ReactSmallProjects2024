@@ -1,6 +1,12 @@
 import data from './Data.js'
 
-const App = () => {
+interface AppProps {
+  question: string;
+  option: string[];
+  answer: string;
+}
+
+const App: React.FC<AppProps> = () => {
   return (
     <div className="bg-zinc-900 text-zinc-200 flex flex-col px-[500px]">
       <h1 className = "text-5xl flex flex-col justify-center items-center h-20">Quiz Questions</h1>
