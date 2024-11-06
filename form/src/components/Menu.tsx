@@ -32,7 +32,7 @@ const menu = () => {
                 <div className="user flex items-center justify-between bg-zinc-800 gap-2 w-full h-14 px-2 rounded-full">
                     <div className='flex items-center gap-2'>
                         <img src={Profile} alt="Profile" className='rounded-full w-12' />
-                        <p>@ankitbhagat ...</p>
+                        <p>@ankitbhagat</p>
                     </div>
                     <FontAwesomeIcon className='text-zinc-600 text-lg px-2' icon={faChevronRight} />
                 </div>
