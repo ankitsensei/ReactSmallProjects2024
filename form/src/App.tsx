@@ -1,17 +1,20 @@
 import {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'
-
-
 import Menu from './components/Menu'
-const App: React.FC = ()   => {
-  const [name, setName] = useState<string>("Ankit")
-  const [gender, setGender] = useState<string>("Male")
-  const [age, setAge] = useState<number>(20)
-  const [university, setUniversity] = useState<string>("Jharkhand Rai University")
-  const [stream, setStream] = useState<string>("Computer Science")
-  const [course, setCourse] = useState<string>("B.Tech")
-  const [semester, setSemester] = useState<number>(3)
+
+const App = ()   => {
+  const [formData, setFormData] = useState({
+    name: "",
+    gender: "",
+    age:"",
+    university:"",
+    stream:"",
+    course:"",
+    semester:""
+  })
+  // const [errors, setErrors] = useState<string[]>()
+
   return (
     <div>
       <div className='flex justify-between'>
@@ -24,13 +27,13 @@ const App: React.FC = ()   => {
           <div className='flex flex-wrap gap-2 mt-20 '>
             <div className='w-80 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
               <p>Name: </p>
-              <input type="text" placeholder='John Doe' className='outline-none w-full' value={name} />
+              <input type="text" placeholder='John Doe' className='outline-none w-full' value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}/>
             </div>
             <div className='w-80 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
               <p>Gender </p>
-              <select className='outline-none w-full ' value={gender}>
+              <select className='outline-none w-full ' value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})} >
                 <option>Male</option>  
-                <option>Female</option>
+                <option>Female</option> 
                 <option>Non-Binary</option>
                 <option>Genderqueer</option>
                 <option>Genderfluid</option>
@@ -61,7 +64,7 @@ const App: React.FC = ()   => {
             </div>
             <div className='w-40 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
               <p>Age: </p>
-              <input type="number" placeholder='20' className='outline-none w-full' value={age} />
+              <input type="number" placeholder='20' className='outline-none w-full' value={formData.age} onChange={(e) => setFormData({...formData, age: e.target.value})}/>
             </div>
           </div>
           <div className='mt-5 flex flex-col'>
@@ -69,23 +72,25 @@ const App: React.FC = ()   => {
             <div className='flex flex-wrap gap-2 mt-1'>
               <div className='w-80 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
                 <p>University:</p>
-                <input type="text" placeholder='Jharkhand Rai University' className='outline-none w-full' value={university}/>
+                <input type="text" placeholder='Jharkhand Rai University' className='outline-none w-full' value={formData.university} onChange={(e) => setFormData({...formData, university: e.target.value})}/>
               </div>
               <div className='w-72 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
                 <p>Stream:</p>
-                <input type="text" placeholder='Computer Science' className='outline-none w-full' value={stream} />
+                <input type="text" placeholder='Computer Science' className='outline-none w-full' value={formData.stream} onChange={(e) => setFormData({...formData, stream: e.target.value})} />
               </div>
               <div className='w-80 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
                 <p>Course:</p>
-                <input type="text" placeholder='B.Tech' className='outline-none w-full' value={course} />
+                <input type="text" placeholder='B.Tech' className='outline-none w-full' value={formData.course} onChange={(e) => setFormData({...formData, course: e.target.value})} />
               </div>  
               <div className='w-44 outline-none border-2 border-zinc-600 rounded px-2 py-2 flex gap-2'>
                 <p>Semester:</p>
-                <input type="number" placeholder='3' className='outline-none w-full' value={semester} />
+                <input type="number" placeholder='3' className='outline-none w-full' value={formData.semester} onChange={(e) => setFormData({...formData, semester: e.target.value})} />
               </div> 
             </div>
           </div>
         </div>
+      </div>
+      <div>
       </div>
     </div>
   )
